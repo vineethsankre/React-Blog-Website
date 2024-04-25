@@ -4,6 +4,7 @@ import Header from './components/Header'
 import About from './components/About'
 import Contact from './components/Contact'
 import BlogsList from './components/BlogsList'
+import BlogItemDetails from './components/BlogItemDetails'
 import NotFound from './components/NotFound'
 
 import './App.css'
@@ -15,6 +16,7 @@ const App = () => (
       <Route exact path="/" component={BlogsList} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/blogs/:id" compoonent={BlogItemDetails}
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>
