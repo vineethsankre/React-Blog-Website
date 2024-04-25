@@ -36,8 +36,8 @@ class BlogsList extends Component {
         {isLoading ? (
           <Loader type="TailSpin" color="#00BFFF" height={50} width={50} />
         ) : (
-          blogsData.map(item => (<BlogItem blogData={item} key={item.id} />
-        )))}
+          blogsData.map(item => <BlogItem blogData={item} key={item.id} />)
+        )}
       </div>
     )
   }
