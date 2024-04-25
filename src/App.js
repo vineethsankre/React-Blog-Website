@@ -16,7 +16,7 @@ const App = () => (
       <Route exact path="/" component={BlogsList} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
-      <Route path="/blogs/:id" compoonent={BlogItemDetails} />
+      <Route path="/blogs/:id" component={BlogItemDetails} />
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>
