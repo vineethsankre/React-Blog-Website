@@ -8,6 +8,7 @@ import './index.css'
 class BlogsList extends Component {
   state = {
     blogsData: [],
+    isLoading: true,
   }
 
   componentDidMount() {
@@ -25,16 +26,18 @@ class BlogsList extends Component {
       topic: eachItem.topic,
       author: eachItem.author,
     }))
-    this.setState({blogsData: updatedData})
+    this.setState({blogsData: updatedData, isLoading: false})
   }
 
   render() {
-    const {blogsData} = this.state
+    const {blogsData, isLoading} = this.state
     return (
       <div className="blog-list-container">
-        {blogsData.map(item => (
-          <BlogItem blogData={item} key={item.id} />
-        ))}
+        {isLoading ? (
+          <Loader type="TailSpin" color="#00BFFF" height={50} width={50} />
+        ) : (
+          blogsData.map(item => (<BlogItem blogData={item} key={item.id} />
+        )))}
       </div>
     )
   }
